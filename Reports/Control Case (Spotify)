@@ -1,7 +1,7 @@
 # Phishing Case Report – PHISH-2025-CTRL-001
 
 **Date:** 2025-09-03  
-**Case ID:** PHISH-2025-CTRL-001  
+**Case ID:** Control Case (Spotify)
 
 ---
 
@@ -76,7 +76,7 @@ IOC file: `../iocs/phish-ctrl-001-iocs.txt`
 ---
 
 ## 7. Supporting Evidence
-![Header Analysis](../Screenshots/Control%20Case%20(Spotify)/Header%20Analysis.png)  
-![SPF DKIM DMARC Pass](../Screenshots/Control%20Case%20(Spotify)/SPF%20DKIM%20DMARC%20Pass.png)  
-![VirusTotal Domain](../Screenshots/Control%20Case%20(Spotify)/Virustotal%20Domain.png)  
-![Talos IP](../Screenshots/Control%20Case%20(Spotify)/Talos%20IP.png)  
+Screenshots/Control Case (Spotify)/ Header Analysis.png  
+Screenshots/Control Case (Spotify)/ SPF DKIM DMARC Pass.png  
+Screenshots/Control Case (Spotify)/ Talos IP.png
+Screenshots/Control Case (Spotify)/ Virustotal Domain.png 

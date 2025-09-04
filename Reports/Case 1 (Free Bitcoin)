@@ -1,0 +1,87 @@
+# Phishing Case Report – PHISH-2025-001 (Bitcoin)
+
+**Date:** 2025-09-01   
+**Case ID:** Case 1 (Free Bitcoin) 
+
+---
+
+## 1. Overview
+Phishing email claiming the recipient had received 2.74 Bitcoin.  
+The message contained a link to a hosted “wallet backup” package on `uschovna.cz`.  
+This delivery method avoids email attachment scanning and relies on the user clicking the link.
+
+---
+
+## 2. Email Metadata
+- **From:** zasilka@uschovna.cz  
+- **Reply-To:** bp1qcej6n9@gmail.com  
+- **To:** chambers.justin5282000@gmail.com (redacted)  
+- **Subject:** Free Bitcoin  
+- **Date:** Sep 1, 2025, 8:40 PM  
+- **SPF:** Pass with IP 85.239.227.157  
+- **DKIM:** Pass with domain uschovna.cz  
+- **DMARC:** No record found (non-compliant)  
+- **Sending IP:** 85.239.227.157  
+
+References:  
+- Header analysis: ../Screenshots/phish-001-bitcoin/header-analysis.png  
+- SPF/DKIM/DMARC: ../Screenshots/phish-001-bitcoin/spf-dkim-dmarc.png  
+
+---
+
+## 3. Indicators of Compromise (IOCs)
+- **Suspicious URL:** https://www.uschovna.cz/en/zasilka/TNWFE8WBHDI2RME6-83S  
+- **Reply-To Email:** bp1qcej6n9@gmail.com  
+- **Domain:** uschovna.cz  
+- **Sending IP:** 85.239.227.157  
+- **Attachment:** None (payload hosted on external site)  
+
+IOC file: ../IOCs/phish-001-bitcoin.txt  
+
+---
+
+## 4. Analysis
+**Header Findings**  
+- SPF and DKIM passed, but DMARC failed due to no DMARC policy on the domain.  
+- Reply-To address (`bp1qcej6n9@gmail.com`) did not match the From address (`uschovna.cz`).  
+
+**Reputation Checks**  
+- **VirusTotal (domain):** Mixed results, some engines flagged suspicious.  
+- **URLScan:** Resolved to a hosted download page, offering a “wallet backup” file.  
+- **AbuseIPDB:** IP previously reported for spam/phishing activity.  
+- **Talos:** Poor sender IP reputation.  
+
+**Delivery Method**  
+- No direct attachment was present. Instead, the email linked to an external file download, a technique used to bypass email attachment filtering.  
+
+**Lure Tactic**  
+- Promise of “free Bitcoin” as financial incentive.  
+- Urgency: *“Your backup is the key to your funds.”*  
+
+---
+
+## 5. Conclusion
+- **Classification:** Phishing / Malware Delivery  
+- **Risk Level:** High  
+- **Assessment:**  
+  The email was a malicious attempt to deliver malware through an external link. Spoofed headers, failed DMARC compliance, mismatched reply-to, and external payload hosting confirm phishing intent.  
+
+---
+
+## 6. Recommended Actions
+- Block domain: `uschovna.cz`  
+- Block reply-to address: `bp1qcej6n9@gmail.com`  
+- Blacklist URL: `https://www.uschovna.cz/en/zasilka/TNWFE8WBHDI2RME6-83S`  
+- Blacklist sending IP: `85.239.227.157`  
+- Update SIEM detection rules for these IOCs  
+- Alert users to cryptocurrency-themed phishing campaigns  
+
+---
+
+## 7. Supporting Evidence
+- ../Screenshots/phish-001-bitcoin/header-analysis.png  
+- ../Screenshots/phish-001-bitcoin/spf-dkim-dmarc.png  
+- ../Screenshots/phish-001-bitcoin/virustotal-domain.png  
+- ../Screenshots/phish-001-bitcoin/urlscan.png  
+- ../Screenshots/phish-001-bitcoin/talos-ip.png  
+- ../Screenshots/phish-001-bitcoin/abuseipdb-ip.png  

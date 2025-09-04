@@ -1,1 +1,82 @@
-placeholder
+# Phishing Case Report – PHISH-2025-CTRL-001
+
+**Date:** 2025-09-03  
+**Case ID:** PHISH-2025-CTRL-001  
+
+---
+
+## 1. Overview
+This control case analyzes a legitimate Spotify email to establish a baseline for normal communications.  
+The email was a legal notification regarding updated Terms of Service.  
+Purpose: demonstrate how to confirm authenticity via header authentication (SPF, DKIM, DMARC), sender reputation, and content review.
+
+---
+
+## 2. Email Metadata
+- **From:** Spotify <no-reply@legal.spotify.com>  
+- **Reply-To:** no-reply@legal.spotify.com  
+- **To:** chambers.justin5282000@gmail.com (redacted)  
+- **Subject:** Important Updates to Spotify’s Terms  
+- **SPF:** PASS with IP 50.31.53.199  
+- **DKIM:** PASS with domain spotify.com  
+- **DMARC:** PASS  
+- **Message ID:** <Yabh_7ojRtehwgLsMFqefA@geopod-ismtpd-16>  
+
+References:  
+- Header overview: `../screenshots/phish-ctrl-001/header-analysis.png`  
+- Auth results: `../screenshots/phish-ctrl-001/spf-dkim-dmarc-pass.png`
+
+---
+
+## 3. Indicators
+- **Domain:** spotify.com  
+- **IP:** 50.31.53.199  
+- **URLs observed:** (list the URLs in the body of the email, e.g., `https://www.spotify.com/...`)  
+- **Attachments:** None  
+
+IOC file: `../iocs/phish-ctrl-001-iocs.txt`
+
+---
+
+## 4. Analysis
+**Header authentication**  
+- SPF: Passed with IP 50.31.53.199.  
+- DKIM: Passed, signed by spotify.com.  
+- DMARC: Passed, indicating proper alignment.  
+
+**Sender and infrastructure**  
+- From and Reply-To both use official Spotify domains.  
+- Message ID and relay (`geopod-ismtpd`) consistent with Spotify mail servers.  
+
+**Reputation checks**  
+- VirusTotal (domain spotify.com): Clean, trusted.  
+- Talos Intelligence (IP 50.31.53.199): Assigned to legitimate email infrastructure.  
+- AbuseIPDB (IP 50.31.53.199): No significant abuse reports.  
+
+**Content review**  
+- Email is consistent with Spotify communications (legal policy update).  
+- No requests for credentials, no scare tactics.  
+- Links in body resolve to `spotify.com` domains.  
+
+---
+
+## 5. Conclusion
+- **Classification:** Legitimate Email  
+- **Risk Level:** None  
+- **Assessment:**  
+  Authentication passed, infrastructure is reputable, and content aligns with expected Spotify communications.  
+  This is a legitimate legal notification and not a phishing attempt.  
+
+---
+
+## 6. Recommended Actions
+- None required.  
+- Use this as a baseline example of a legitimate email when training or comparing suspicious cases.  
+
+---
+
+## 7. Supporting Evidence
+- `../screenshots/phish-ctrl-001/header-analysis.png`  
+- `../screenshots/phish-ctrl-001/spf-dkim-dmarc-pass.png`  
+- `../screenshots/phish-ctrl-001/virustotal-domain.png`  
+- `../screenshots/phish-ctrl-001/talos-ip.png`  

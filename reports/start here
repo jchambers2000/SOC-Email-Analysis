@@ -25,6 +25,12 @@ The focus is on **email triage, header analysis, IOC enrichment, and incident re
 ---
 
 ##  Repository Structure
+soc-phishing-analysis/
+├── reports/              # SOC-style phishing case reports
+├── screenshots/          # Redacted screenshots (headers, VT, URLScan, etc.)
+├── iocs/                 # Indicators of Compromise (hashes, URLs, IPs)
+├── templates/            # Report templates & workflow checklists
+└── README.md             # Project overview
 
 ---
 

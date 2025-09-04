@@ -1,0 +1,45 @@
+# SOC Phishing Analysis Project
+
+This repository contains hands-on phishing email investigations designed to simulate the work of a Tier 1 SOC analyst.  
+The focus is on **email triage, header analysis, IOC enrichment, and incident reporting** using open-source tools.
+
+---
+
+##  Project Goals
+- Analyze suspicious/malicious emails
+- Extract and review full headers
+- Validate SPF, DKIM, and DMARC
+- Perform domain, IP, and URL reputation lookups
+- Document findings in SOC-style case reports
+
+---
+
+##  Tools Used
+- Google Message Header Analyzer
+- MXToolbox Header Analyzer
+- VirusTotal
+- URLScan.io
+- AbuseIPDB
+- Talos Intelligence
+
+---
+
+##  Repository Structure
+
+---
+
+##  Sample Case Report (Summary)
+**Case ID:** PHISH-2025-001  
+**Subject:** *Free Bitcoin*  
+**Findings:**  
+- From: `zasilka@uschovna.cz`  
+- Reply-To: `bp1qcej6n9@gmail.com` (mismatch)  
+- SPF/DKIM/DMARC: all failed  
+- IOC: `.reg` attachment, suspicious URL  
+**Assessment:** Phishing / Malware delivery  
+**Action Taken:** Block sender domain, blacklist IOC, document in report
+
+---
+
+##  Resume Highlight
+*“Performed phishing email analysis by extracting full headers, validating SPF/DKIM/DMARC, and enriching with VirusTotal, URLScan, and AbuseIPDB lookups; documented results in SOC-style incident reports.”*

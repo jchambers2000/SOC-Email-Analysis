@@ -1,14 +1,14 @@
-# Phishing Case Report – PHISH-2025-001 (Bitcoin)
+# Phishing Case Report – Case 1 (Free Bitcoin)
 
-**Date:** 2025-09-01   
-**Case ID:** Case 1 (Free Bitcoin) 
+**Date:** 2025-09-04 
+**Case ID:** Case 1 (Free Bitcoin)  
 
 ---
 
 ## 1. Overview
 Phishing email claiming the recipient had received 2.74 Bitcoin.  
 The message contained a link to a hosted “wallet backup” package on `uschovna.cz`.  
-This delivery method avoids email attachment scanning and relies on the user clicking the link.
+This delivery method avoids email attachment scanning and relies on the user clicking the malicious link.
 
 ---
 
@@ -17,15 +17,16 @@ This delivery method avoids email attachment scanning and relies on the user cli
 - **Reply-To:** bp1qcej6n9@gmail.com  
 - **To:** chambers.justin5282000@gmail.com (redacted)  
 - **Subject:** Free Bitcoin  
-- **Date:** Sep 1, 2025, 8:40 PM  
+- **Date:** Sep 1, 2025, 8:40 PM CDT  
 - **SPF:** Pass with IP 85.239.227.157  
 - **DKIM:** Pass with domain uschovna.cz  
 - **DMARC:** No record found (non-compliant)  
 - **Sending IP:** 85.239.227.157  
 
 References:  
-- Header analysis: ../Screenshots/phish-001-bitcoin/header-analysis.png  
-- SPF/DKIM/DMARC: ../Screenshots/phish-001-bitcoin/spf-dkim-dmarc.png  
+- Email header: ../Screenshots/Case 1 (Free Bitcoin)/Email Header (Free Bitcoin).png 
+- GHA Header Analysis: ../Screenshots/Case 1 (Free Bitcoin)/GHA Header Analysis (Free Bitcoin).png 
+- MXToolbox Header Analysis: ../Screenshots/Case 1 (Free Bitcoin)/MXToolbox Header Analysis (Free Bitcoin).png
 
 ---
 
@@ -36,7 +37,7 @@ References:
 - **Sending IP:** 85.239.227.157  
 - **Attachment:** None (payload hosted on external site)  
 
-IOC file: ../IOCs/phish-001-bitcoin.txt  
+IOC file: ../IOCs/Case 1 (Free Bitcoin)
 
 ---
 
@@ -44,15 +45,20 @@ IOC file: ../IOCs/phish-001-bitcoin.txt
 **Header Findings**  
 - SPF and DKIM passed, but DMARC failed due to no DMARC policy on the domain.  
 - Reply-To address (`bp1qcej6n9@gmail.com`) did not match the From address (`uschovna.cz`).  
+- Sending infrastructure identified as hosted in the Czech Republic.  
 
 **Reputation Checks**  
-- **VirusTotal (domain):** Mixed results, some engines flagged suspicious.  
+- **VirusTotal (domain):** Initial scans showed clean, but one vendor flagged suspicious/spam.  
+  - ../Screenshots/Case 1 (Free Bitcoin)/Virustotal Domain (Free Bitcoin).png 
 - **URLScan:** Resolved to a hosted download page, offering a “wallet backup” file.  
+  - ../Screenshots/Case 1 (Free Bitcoin)/URLscan (Free Bitcoin).png
 - **AbuseIPDB:** IP previously reported for spam/phishing activity.  
+  - ../Screenshots/Case 1 (Free Bitcoin)/Abuseipdb (Free Bitcoin).png
 - **Talos:** Poor sender IP reputation.  
+  - ../Screenshots/Case 1 (Free Bitcoin)/Talos (Free Bitcoin).png
 
 **Delivery Method**  
-- No direct attachment was present. Instead, the email linked to an external file download, a technique used to bypass email attachment filtering.  
+- No direct attachment present. Instead, the email linked to an external file download, a technique used to bypass email attachment filtering.  
 
 **Lure Tactic**  
 - Promise of “free Bitcoin” as financial incentive.  
@@ -64,7 +70,7 @@ IOC file: ../IOCs/phish-001-bitcoin.txt
 - **Classification:** Phishing / Malware Delivery  
 - **Risk Level:** High  
 - **Assessment:**  
-  The email was a malicious attempt to deliver malware through an external link. Spoofed headers, failed DMARC compliance, mismatched reply-to, and external payload hosting confirm phishing intent.  
+  The email was a malicious attempt to deliver malware through an external link. Spoofed headers, failed DMARC compliance, mismatched reply-to, and suspicious hosting infrastructure confirm phishing intent.  
 
 ---
 
@@ -79,9 +85,10 @@ IOC file: ../IOCs/phish-001-bitcoin.txt
 ---
 
 ## 7. Supporting Evidence
-- ../Screenshots/phish-001-bitcoin/header-analysis.png  
-- ../Screenshots/phish-001-bitcoin/spf-dkim-dmarc.png  
-- ../Screenshots/phish-001-bitcoin/virustotal-domain.png  
-- ../Screenshots/phish-001-bitcoin/urlscan.png  
-- ../Screenshots/phish-001-bitcoin/talos-ip.png  
-- ../Screenshots/phish-001-bitcoin/abuseipdb-ip.png  
+- ../Screenshots/Case 1 (Free Bitcoin)/Abuseipdb (Free Bitcoin).png 
+- ../Screenshots/Case 1 (Free Bitcoin)/Email Header (Free Bitcoin).png  
+- ../Screenshots/Case 1 (Free Bitcoin)/GHA Header Analysis (Free Bitcoin).png
+- ../Screenshots/Case 1 (Free Bitcoin)/MXToolbox Header Analysis (Free Bitcoin).png
+- ../Screenshots/Case 1 (Free Bitcoin)/Talos (Free Bitcoin).png
+- ../Screenshots/Case 1 (Free Bitcoin)/URLscan (Free Bitcoin).png
+- ../Screenshots/Case 1 (Free Bitcoin)/Virustotal Domain (Free Bitcoin).png

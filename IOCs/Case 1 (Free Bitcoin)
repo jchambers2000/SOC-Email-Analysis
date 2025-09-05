@@ -1,0 +1,28 @@
+# IOC File – Case 1 (Free Bitcoin)
+
+Case ID: PHISH-2025-001
+Date: 2025-09-01
+
+Domain:
+- uschovna.cz
+
+Suspicious URL:
+- https://www.uschovna.cz/en/zasilka/TNWFE8WBHDI2RME6-83S
+
+Reply-To Email:
+- bp1qcej6n9@gmail.com
+
+Sending IP:
+- 85.239.227.157
+  • Country: Czech Republic (Prague)
+  • ASN: AS15685 (NETHOST s.r.o.)
+  • Hostname: www301.uschovna.cz
+
+Attachment:
+- None (payload hosted externally via download link)
+
+Reputation Findings:
+- VirusTotal: Domain flagged by some engines as suspicious/spam
+- URLScan.io: Landing page hosted on uschovna.cz with download prompt
+- AbuseIPDB: IP reported previously for spam activity
+- Talos: Poor IP reputation

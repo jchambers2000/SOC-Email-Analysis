@@ -29,8 +29,8 @@ The goal of this project is to demonstrate the ability to:
 
 ##  Repository Structure
 
-- `reports/` → SOC-style phishing case reports (PDFs or Markdown)
-- `screenshots/` → Redacted screenshots of analysis
+- `Reports/` → SOC-style phishing case reports (PDFs or Markdown)
+- `Screenshots/` → Redacted screenshots of analysis
 - `README.md` → Project overview and documentation
 
 ---

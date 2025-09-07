@@ -1,1 +1,95 @@
+# Phishing Case Report – Case 2 (Euro Donation)
+
+**Date:** 2025-08-09  
+**Case ID:** Case 2 (Euro Donation)  
+
+---
+
+## 1. Overview
+Phishing email claiming the recipient had been selected to receive a €6,500,000 donation.  
+The message instructed the user to reply only to a separate Gmail address, a tactic consistent with advance-fee fraud (419 scams).  
+This case highlights how phishing can succeed even when SPF, DKIM, and DMARC authentication pass.
+
+---
+
+## 2. Email Metadata
+- **From:** Carmen Palacios <cpalacios@munivalpo.cl>  
+- **Reply-To:** francesconnollyf2@gmail.com  
+- **Subject:** RE  
+- **Date:** Sat, Aug 9, 2025, 11:19 AM CDT  
+- **SPF:** Pass with IP 200.50.126.100  
+- **DKIM:** Pass with domain munivalpo.cl  
+- **DMARC:** Pass  
+- **Sending IP:** 200.50.126.100 (Valparaíso, Chile – TELEFONICA EMPRESAS CHILE SA)  
+
+References:  
+- Email: ../Screenshots/Case 2 (Euro Donation)/Email (Euro Donation).png  
+- Email Header: ../Screenshots/Case 2 (Euro Donation)/Email Header (Euro Donation).png  
+- GHA Header Analysis: ../Screenshots/Case 2 (Euro Donation)/GHA Header Analysis (Euro Donation).png
+- MXToolbox Header Analysis: ../Screenshots/Case 2 (Euro Donation)/MXToolbox Header Analysis (Euro Donation).png
+
+---
+
+## 3. Indicators of Compromise (IOCs)
+- **Reply-To Address:** francesconnollyf2@gmail.com  
+- **Sender Domain:** munivalpo.cl  
+- **Sending IP:** 200.50.126.100  
+- **Associated Infrastructure:** mail.munivalpo.cl (TELEFONICA EMPRESAS CHILE SA)  
+- **Attack Method:** Social engineering → lure to reply  
+
+IOC file: ../IOCs/Case%202%20(Euro%20Donation).txt  
+
+---
+
+## 4. Analysis
+**Header Findings**  
+- SPF, DKIM, and DMARC all passed.  
+- Despite authentication success, the **Reply-To field redirected to Gmail** — classic fraud indicator.  
+
+**Reputation Checks**  
+- **VirusTotal (domain):** 2/97 engines flagged `munivalpo.cl` as malicious.  
+  - ../Screenshots/Case 2 (Euro Donation)/Virustotal Domain (Euro Donation).png
+- **URLScan:** Shows login portal (likely Outlook Web App) hosted on munivalpo.cl.  
+  - ../Screenshots/Case 2 (Euro Donation)/URLscan (Euro Donation).png 
+- **AbuseIPDB:** IP 200.50.126.100 reported for spam, low confidence.  
+  - ../Screenshots/Case 2 (Euro Donation)/Abuseipdb (Euro Donation).png 
+- **Talos:** Mixed reputation (inconsistent reporting across feeds).  
+  - ../Screenshots/Case 2 (Euro Donation)/Talos (Euro Donation).png
+
+**Attack Vector**  
+- No attachment or direct malware.  
+- Pure social engineering using fraudulent reply-to address.  
+
+**Lure Tactic**  
+- Advance-Fee Fraud: promise of €6.5M “donation.”  
+- Exclusivity: user must “reply only to this address.”  
+- Psychological exploitation: greed and curiosity.  
+
+---
+
+## 5. Conclusion
+- **Classification:** Phishing / Advance-Fee Fraud  
+- **Risk Level:** Medium (no immediate malware risk, but financial/social risk is high).  
+- **Assessment:**  
+  The email abused a legitimate municipal domain to gain trust. Despite valid SPF/DKIM/DMARC, the mismatched Reply-To and fraudulent content confirm malicious intent.  
+
+---
+
+## 6. Recommended Actions
+- Block / monitor Reply-To: `francesconnollyf2@gmail.com`  
+- Flag domain `munivalpo.cl` for possible compromise → monitor mail traffic.  
+- Train users on donation / lottery scam indicators.  
+- Update SIEM rules to flag mismatched From vs. Reply-To fields.  
+
+---
+
+## 7. Supporting Evidence
+- ../Screenshots/Case 2 (Euro Donation)/Abuseipdb (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/Email (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/Email Header (Euro Donation).png 
+- ../Screenshots/Case 2 (Euro Donation)/GHA Header Analysis (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/MXToolbox Header Analysis (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/Talos (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/URLscan (Euro Donation).png
+- ../Screenshots/Case 2 (Euro Donation)/Virustotal Domain (Euro Donation).png
 

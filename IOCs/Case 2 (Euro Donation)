@@ -1,0 +1,22 @@
+# IOC File – Case 2 (Euro Donation)
+
+Case ID: Case 2 (Euro Donation)
+Date: 2025-08-09
+
+Reply-To:
+- francesconnollyf2@gmail.com
+
+Sender Domain:
+- munivalpo.cl
+
+Sending IP:
+- 200.50.126.100
+  • ASN: AS15311 (TELEFONICA EMPRESAS CHILE SA)
+  • Hostname: mail.munivalpo.cl
+  • Location: Valparaíso, Chile
+
+Reputation Findings:
+- VirusTotal: 2/97 engines flagged domain as malicious
+- URLScan: Outlook Web App login page hosted at munivalpo.cl
+- AbuseIPDB: IP reported for spam 5 times
+- Talos: Mixed reputation, possibly compromised infrastructure

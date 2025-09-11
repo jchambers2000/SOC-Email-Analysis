@@ -15,12 +15,13 @@ This case highlights how phishing can succeed even when SPF, DKIM, and DMARC aut
 ## 2. Email Metadata
 - **From:** Carmen Palacios <cpalacios@munivalpo.cl>  
 - **Reply-To:** francesconnollyf2@gmail.com  
+- **To:** chambers.justin5282000@gmail.com
 - **Subject:** RE  
 - **Date:** Sat, Aug 9, 2025, 11:19 AM CDT  
 - **SPF:** Pass with IP 200.50.126.100  
 - **DKIM:** Pass with domain munivalpo.cl  
 - **DMARC:** Pass  
-- **Sending IP:** 200.50.126.100 (Valparaíso, Chile – TELEFONICA EMPRESAS CHILE SA)  
+- **Sending IP:** 200.50.126.100  
 
 References:  
 - Email: ../Screenshots/Case 2 (Euro Donation)/Email (Euro Donation).png  
@@ -37,7 +38,7 @@ References:
 - **Associated Infrastructure:** mail.munivalpo.cl (TELEFONICA EMPRESAS CHILE SA)  
 - **Attack Method:** Social engineering → lure to reply  
 
-IOC file: ../IOCs/Case%202%20(Euro%20Donation).txt  
+IOC file: ../IOCs/Case 2 (Euro Donation)
 
 ---
 

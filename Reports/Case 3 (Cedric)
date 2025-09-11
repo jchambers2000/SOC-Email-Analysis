@@ -1,1 +1,90 @@
+Phishing Case Report – Case 3 (Cedric)
 
+Date: 2025-09-06
+Case ID: Case 3 (Cedric)
+
+1. Overview
+
+Phishing email pretending to be a login notification with suspicious links.
+The email attempted to redirect the user through multiple domains, ultimately leading to a phishing site (remaskoline.cc) themed around cryptocurrency.
+The sending domain (cedrithecarguy.com) is a legitimate small business website, likely compromised and abused for malicious purposes.
+
+2. Email Metadata
+
+From: contact@cedrithecarguy.com
+To: chambers.justin5282000@gmail.com
+Subject: [] Login Details
+Date: Sep 6, 2025, 4:30 AM CDT
+SPF: None
+DKIM: Pass with domain cedrithecarguy.com
+DMARC: Fail
+Sending IP: 173.231.204.107
+
+References:
+
+Email: ../Screenshots/Case 3 (Cedric)/Email (Cedric).png
+Email Header: ../Screenshots/Case 3 (Cedric)/Email Header (Cedric).png
+GHA Header Analysis: ../Screenshots/Case 3 (Cedric)/GHA Header Analysis (Cedric).png
+MXToolbox Header Analysis: ../Screenshots/Case 3 (Cedric)/MX Toolbox Header Analysis (Cedric).png
+
+3. Indicators of Compromise (IOCs)
+
+Domains: remaskoline.cc (phishing site), greyxw.blogspot.bg (redirector), cedrithecarguy.com (legitimate)
+URLs: http://www.greyxw.blogspot.bg/ https://remaskoline.cc/payouts/ https://cedrithecarguy.com/wp-login.php
+IP Addresses: 147.45.198.141 (HostNux, Germany – phishing infrastructure) 173.231.204.107 (InMotion Hosting, US – mail relay)
+Attachment: None
+IOC file: ../IOCs/Case 3 (Cedric)
+
+4. Analysis
+
+Header Findings
+SPF misconfigured (none).
+DKIM passed, suggesting possible domain compromise.
+DMARC failed, leaving spoofed/abused mail unblocked.
+
+Reputation Checks
+
+VirusTotal (remaskoline.cc): Flagged as phishing.
+../Screenshots/Case 3 (Cedric)/Virustotal Domain (Cedric).png
+../Screenshots/Case 3 (Cedric)/Virustotal Username Link (Cedric).png
+URLScan: Showed redirect chain from greyxw.blogspot.bg → remaskoline.cc.
+../Screenshots/Case 3 (Cedric)/URLscan Domain (Cedric).png
+../Screenshots/Case 3 (Cedric)/URLscan Username Link (Cedric).png
+AbuseIPDB: IP 147.45.198.141 reported for malicious activity.
+../Screenshots/Case 3 (Cedric)/Abuseipdb (Cedric).png
+Talos: Neutral/legitimate reputation for cedrithecarguy.com.
+../Screenshots/Case 3 (Cedric)/Talos (Cedric).png
+
+Lure Tactic
+Fake login details notification.
+Redirector chain through Blogspot → malicious crypto phishing page.
+
+5. Conclusion
+
+Classification: Credential Phishing
+Risk Level: High
+Assessment:
+Attack leveraged a compromised legitimate domain to deliver phishing emails. Redirectors led to a malicious cryptocurrency-themed phishing page hosted on remaskoline.cc.
+
+6. Recommended Actions
+
+Block domains: remaskoline.cc, greyxw.blogspot.bg
+Block IP: 147.45.198.141
+Flag sender: contact@cedrithecarguy.com
+ as suspicious pending validation
+Notify InMotion Hosting of potential compromise
+Educate users on credential-harvesting phishing emails
+
+7. Supporting Evidence
+
+../Screenshots/Case 3 (Cedric)/Abuseipdb (Cedric).png
+../Screenshots/Case 3 (Cedric)/Email (Cedric).png
+../Screenshots/Case 3 (Cedric)/Email Header (Cedric).png
+../Screenshots/Case 3 (Cedric)/GHA Header Analysis (Cedric).png
+../Screenshots/Case 3 (Cedric)/MX Toolbox Header Analysis (Cedric).png
+../Screenshots/Case 3 (Cedric)/Talos (Cedric).png
+../Screenshots/Case 3 (Cedric)/URLscan Domain (Cedric).png
+../Screenshots/Case 3 (Cedric)/URLscan Username Link (Cedric).png
+../Screenshots/Case 3 (Cedric)/Virustotal Domain (Cedric).png
+
+../Screenshots/Case 3 (Cedric)/Virustotal Username Link (Cedric).png

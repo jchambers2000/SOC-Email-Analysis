@@ -1,1 +1,27 @@
+# IOC File – Case 3 (Cedric)
 
+Case ID: Case 3 (Cedric)
+Date: 2025-09-06
+
+Reply-To:
+- contact@cedrichtcarguy.com
+
+Domain:
+- cedrichtcarguy.com (legitimate business domain, likely compromised)
+
+Suspicious URLs:
+- http://www.greyow.blogspot.bg/ (redirector)
+- https://remsakoline.cc/payouts/ (phishing site)
+- https://cedrichtcarguy.com/wp-login.php (compromised site used in chain)
+
+Sending IP:
+- 173.231.204.107
+  • Location: US (InMotion Hosting – mail relay)
+  • Hostname: unknown
+- 149.47.198.141 (Hetzner, Germany – phishing infrastructure)
+
+Reputation Findings:
+- VirusTotal: remsakoline.cc flagged as phishing
+- URLScan: Redirect observed from greyow.blogspot.bg to remsakoline.cc
+- AbuseIPDB: 149.47.198.141 reported for malicious activity
+- Talos: Neutral/legitimate categorization for cedrichtcarguy.com (likely compromised)
